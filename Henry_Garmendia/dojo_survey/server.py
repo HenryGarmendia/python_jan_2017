@@ -21,4 +21,8 @@ def create_user():
 	# redirects back to the '/' route
 	return render_template('result.html', full_Name=fullName, city_Loc=cityLoc, fav_Lang=favLang, comment=textArea)
 
+
+
+	
+
 app.run(debug=True)  # run our server
