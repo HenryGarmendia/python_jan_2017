@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from flask import Flask, render_template, request, redirect
+=======
+from flask import Flask, render_template
+>>>>>>> upstream/master
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,6 +17,7 @@ def ninjas():
 def dojos():
 	return render_template('dojos.html', name='Henry Garmendia | Real Ninja')
 
+<<<<<<< HEAD
 @app.route('/users', methods=['POST'])
 def create_user():
 	print "Got Post Info"
@@ -26,3 +31,6 @@ def create_user():
 	return redirect('/')
 
 app.run(debug=True)  # run our server
+=======
+app.run(debug=True)
+>>>>>>> upstream/master

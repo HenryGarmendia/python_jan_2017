@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<h2>Take our Ninja Survey!</h2>
+	<form>
+    <label>Your Name:<input type="text" name="name"></label>
+    <label>Email:<input type="text" name="email"></label>
+    <h4>Do you like coding?</h4>
+    <label><input type="radio" name="response" value="yes">Yes</label>
+    <label><input type="radio" name="response" value="no">No</label>
+  	<h4>Would you code full time as a job?</h4>
+    <select name="preference">
+      <option value="yes">Yes</option>
+      <option value="not">No</option>
+      <option value="maybe">Not sure</option>
+    </select>
+  	<h4>Which coding languages do you know? (check all that apply)</h4>
+    <label><input type="checkbox" name="languages" value="html">HTML5</label>
+    <label><input type="checkbox" name="languages" value="css">CSS3</label>
+    <label><input type="checkbox" name="languages" value="javascript">Javascript</label>
+    <label><input type="checkbox" name="languages" value="python">Python</label>
+    <label><input type="checkbox" name="languages" value="ruby">Ruby</label>
+    <label><input type="checkbox" name="languages" value="php">PHP</label>
+    <label><input type="checkbox" name="languages" value="dotnet">.NET / C#</label>
+    <input type="submit" value="submit">
+  </form>
+</body>
+</html>

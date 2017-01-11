@@ -4,7 +4,7 @@
  <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>Python Fundamentals | Real Ninjas</title>
+ 	<title>Python Fundamentals</title>
 
 	<!-- NORMALIZE CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
@@ -29,27 +29,17 @@
 			<!-- ::ABOUT THIS COURSE
 			======================================== -->
 			<div class="row">
-<<<<<<< HEAD
-				<div class="col-md-12 col-sm-12">
-=======
 				<div class="col-md-8 col-sm-12">
->>>>>>> upstream/master
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h1 class="panel-tittle">Real Ninjas</h1>
+							<h1 class="panel-tittle">Welcome Ninjas</h1>
 						</div><!-- //panel-heading -->
 						<div class="panel-body">
-							<img src="http://www.realninjabook.com/wp-content/uploads/2010/03/sandayu-momochi-monument.jpg" alt="Sandayu Momochi">
-							<div class="panel-content">
-								<h4>Sandayu Momochi</h4>
-								<p>Sandayu Momochi was expertly skilled in ninjitsu and the use of various weapons. It is believed that he was the leader of one of the most powerful ninja clans during the Edo Period in Japan. His fame was so widespread, there was a monument built in his honor, which is pictured above. There were 3 powerful Ninja Clans which resided in the Iga Province. Sandayu Momochi was believed to be the head of the Southern Clan and ran 3 ninja schools in the area.</p>
-							</div><!-- //panel-content -->
-							<img src="http://www.realninjabook.com/wp-content/uploads/2010/03/iga-ueno-castle-2.jpg" alt="Sandayu Momochi">
-							<div class="panel-content">
-								<h4>Iga-Ueno Castle</h4>
-								<p>One of the top historical sites in Japan is the Iga-Ueno Castle. Located in Iga, where many Ninjas lived and trained during the Edo Period, this castle was once owned by the powerful landlord and governing official (known as a Daimyo) Todo Takatora. Originally built as a “defense weapon” for the area, it was later converted to a governing office after 1602. These pictures posted here were all taken by Dr. Hirohisa Oda, author of the book “Real Ninja”.</p>
-								<h4>Author: {{ name }}</h4>
-							</div><!-- //panel-content -->
+							<h4>Python</h4>
+							<p>Python is a very popular language created in 1991, and is used for web applications, servers, information security, artificial intelligence, data science, mathematics, video games, and even robots. It is commonly used by many Fortune 500 companies and top technology startups. By the end of this track, you’ll have what it takes to begin your career in companies that use Python, or even to start your own company!</p>
+							<h4>Flask</h4>
+							<p>Flask is one of the easiest ways to bring your Python skills online. It's a great microframework used by thousands of people to create prototypes and small web apps.</p>
+							<h4>Author: {{ name }}</h4>
 						</div><!-- //panel-body -->
 					</div><!-- //panel -->
 				</div><!-- //col-md-6 -->
@@ -64,8 +54,4 @@
  	<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
 
  </body>
-<<<<<<< HEAD
  </html>
-=======
- </html>
->>>>>>> upstream/master

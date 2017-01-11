@@ -1,6 +1,9 @@
 import random
 
+<<<<<<< HEAD
 #TOSSING COIN GAME
+=======
+>>>>>>> upstream/master
 def tossing_coin():	
 	heads = 0
 	tails = 0
@@ -14,4 +17,17 @@ def tossing_coin():
 			print 'Attempt #{} Throwing a coin... it\'s tail!...Got {} head(s) so far and {} tail(s) so far'.format(count, heads, tails)
 	print 'Ending the program, Thank you!'
 
+<<<<<<< HEAD
 tossing_coin()
+=======
+tossing_coin()
+
+
+
+
+
+
+
+
+
+>>>>>>> upstream/master
