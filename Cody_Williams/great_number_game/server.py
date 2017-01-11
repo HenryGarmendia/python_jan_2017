@@ -5,25 +5,30 @@ app.secret_key = 'somethingverysecret'
 
 @app.route('/')
 def home():
-	#generate a random number
-	random_num = int(random.random() * 100)
-	#check if num is in session
+	#check if num is not in session
 	if 'num' not in session:
+		#generate a random number
+		random_num = int(random.random() * 100)
+		#save the random number into session
 		session['num'] = random_num
-	print session['num']
 	return render_template('index.html')
 
 @app.route('/guess', methods=['POST'])
 def guess():
+	#stash the user input into a variable
 	guess = request.form['guess']
+	#convert the user input into an integer so we can compare against another integer
 	guess = int(guess)
+	#compare the user input against the number in session
 	if guess < session['num']:
 		session['fail'] = "Too Low"
 	elif guess > session['num']:
 		session['fail'] = "Too High"
 	else:
+		#if the user guesses correctly we need to check to see if there was a fail message and then clear it
 		if 'fail' in session:
 			session.pop('fail')
+		#now we create the success message and save it into session
 		session['success'] = 'The number was {}.  You guessed it correctly'.format(session['num'])
 	return redirect('/')
 
@@ -33,6 +38,7 @@ def reset():
 	session.clear()
 	#redirect to homepage
 	return redirect('/')
+	
 app.run(debug=True)
 
 
