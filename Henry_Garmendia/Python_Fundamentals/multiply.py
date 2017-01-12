@@ -19,3 +19,4 @@ def numMulti(a, multiplyer):
 	return aNew
 
 print numMulti([2,4,10,16],5)
+
