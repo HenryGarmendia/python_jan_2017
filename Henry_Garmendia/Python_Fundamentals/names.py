@@ -47,26 +47,6 @@ Instructors
 1 - MICHAEL CHOI - 11
 2 - MARTIN PURYEAR - 13
 '''
-# users = {
-#     'Students': [
-#         {'first_name':  'Michael', 'last_name' : 'Jordan'},
-#         {'first_name' : 'John', 'last_name' : 'Rosales'},
-#         {'first_name' : 'Mark', 'last_name' : 'Guillen'},
-#         {'first_name' : 'KB', 'last_name' : 'Tonel'}
-#     ],
-#     'Instructors': [
-#         {'first_name' : 'Michael', 'last_name' : 'Choi'},
-#         {'first_name' : 'Martin', 'last_name' : 'Puryear'}
-#     ]
-# }
-
-# for occupation in users:
-#     print occupation
-#     count=0
-#     for name in users[occupation]:
-#         count +=1
-#         full_name= name['first_name']+ ' '+ name['last_name']
-#         print str(count) + ' - ' + full_name.upper() + ' - ' + str(len(name['first_name'])+len(name['last_name']))
 
 users = {
     'Students': [
@@ -77,24 +57,21 @@ users = {
     ],
     'Instructors': [
         {'first_name' : 'Michael', 'last_name' : 'Choi'},
-        {'first_name' : 'Martin', 'last_name' : 'Puryear'}
+        {'first_name' : 'Martin', 'last_name' : 'Puryear'},
+        {'first_name' : 'Henry', 'last_name' : 'Ninja'}
     ]
 }
 
-# Loop that iterates through each item in the dictionary
-for key, data in users.items():
-    print key
-    index=1
-    # Loop that iterates through the list and prints the first and last name along with place in list and name length
-    for value in data:
-        length = len(value["first_name"])+len(value["last_name"])
-        print "{} -".format(index), value["first_name"], value["last_name"], "- {}".format(length)
-        index+=1
+def stud_inst(users):
+    #loop that will iterate through the dictionary list
+    for dict_data in users:
+        print dict_data
+        i = 0
+        #loop that prints all the user full name with a count
+        for name in users[dict_data]:
+            i += 1
+            full_name = name['first_name'] + ' ' + name['last_name']
+            print "{} -".format(i), '{} - '.format(full_name), str(len(name['first_name'])+len(name['last_name']))
 
 
-
-
-
-
-
-
+stud_inst(users)

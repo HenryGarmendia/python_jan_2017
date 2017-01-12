@@ -50,12 +50,3 @@ def draw_starts(letterNum):
 
 
 draw_starts([1, 3, 5, 8, "Coding", 3, "Dojo", 4, 15, "Ninja Style", 6, 4 ])
-
-
-
-
-
-
-
-
-
