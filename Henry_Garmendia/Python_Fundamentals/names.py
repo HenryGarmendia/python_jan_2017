@@ -75,4 +75,3 @@ def stud_inst(users):
 
 
 stud_inst(users)
-

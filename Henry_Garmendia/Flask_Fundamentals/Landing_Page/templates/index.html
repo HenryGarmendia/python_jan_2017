@@ -4,19 +4,22 @@
  <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>Python Fundamentals | Ninja Information</title>
+ 	<title>Python Fundamentals</title>
+
+ 	<!-- FONTAWESOME -->
+ 	<script src="https://use.fontawesome.com/41aef5863b.js"></script>
+
+ 	<!-- FONTAWESOME -->
+ 	<script src="https://use.fontawesome.com/41aef5863b.js"></script>
 
 	<!-- NORMALIZE CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
 
 	<!-- BOOTSTRAP -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+	
  	<!-- MAIN CSS -->
  	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
-
-	<!-- LIVERELOAD -->
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
  </head>
  <body>
 	
@@ -32,24 +35,13 @@
 				<div class="col-md-8 col-sm-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h1 class="panel-tittle">Ninja Information</h1>
+							<h1 class="panel-tittle">Welcome Ninjas</h1>
 						</div><!-- //panel-heading -->
 						<div class="panel-body">
-							<form>
-							  <div class="form-group">
-							    <input type="text" class="form-control" placeholder="First Name">
-							  </div>
-							   <div class="form-group">
-							    <input type="text" class="form-control" placeholder="Second Name">
-							  </div>
-							  <textarea class="form-control" rows="3"></textarea>
-							  <div class="checkbox">
-							    <label>
-							      <input type="checkbox"> Looking for work
-							    </label>
-							  </div>
-							  <button type="submit" class="btn btn-primary active">Submit</button>
-							</form>
+							<h4>Python</h4>
+							<p>Python is a very popular language created in 1991, and is used for web applications, servers, information security, artificial intelligence, data science, mathematics, video games, and even robots. It is commonly used by many Fortune 500 companies and top technology startups. By the end of this track, you’ll have what it takes to begin your career in companies that use Python, or even to start your own company!</p>
+							<h4>Flask</h4>
+							<p>Flask is one of the easiest ways to bring your Python skills online. It's a great microframework used by thousands of people to create prototypes and small web apps.</p>
 							<h4>Author: {{ name }}</h4>
 						</div><!-- //panel-body -->
 					</div><!-- //panel -->

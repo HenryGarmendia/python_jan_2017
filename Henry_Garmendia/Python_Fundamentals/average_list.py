@@ -11,4 +11,3 @@ for i in a:
 	total += i
 
 print total/len(a)
-

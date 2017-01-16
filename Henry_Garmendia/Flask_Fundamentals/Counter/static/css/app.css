@@ -172,3 +172,55 @@ img {
   vertical-align: top;
   width: 620px;
 }
+
+.panel-body {
+  position: relative;
+  text-align: center;
+}
+
+.c-class {
+  font-size: 4em;
+}
+
+.counter {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 50px;
+}
+.counter span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+form {
+  display: inline-block;
+}
+
+form + form {
+  margin-left: .5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
