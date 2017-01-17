@@ -57,9 +57,9 @@ def wall():
 	new_messages = []
 	message_ids = []
 	for message in messages:
-		message_obj = {}
-		message_obj['comments'] = []
 		if message['message_id'] not in message_ids:
+			message_obj = {}
+			message_obj['comments'] = []
 			message_ids.append(message['message_id'])
 			message_obj['message_id'] = message['message_id']
 			message_obj['message'] = message['message']
@@ -71,9 +71,6 @@ def wall():
 			comment_obj['comment_user'] = message['comment_username']
 			comment_obj['comment_date'] = message['comment_date']
 			new_messages[-1]['comments'].append(comment_obj)
-
-
-
 	return render_template('wall.html', current_user=user, messages=new_messages)
 
 @app.route('/messages', methods=['POST'])
