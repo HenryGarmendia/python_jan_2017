@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Wall</title>
+</head>
+<body>
+	<div>
+		<div id="header">
+			<h1>CodingDojo Wall</h1>
+			<p>Welcome {{current_user[0]['name']}}</p>
+			<a href="/logout">Logout</a>
+		</div>
+		<div>
+			<form action="/messages" method="post">
+				<div>
+					<label>Post a Message</label>
+				</div>
+				<div>
+					<textarea name='message'></textarea>
+				</div>
+				<div>
+					<input type="submit" value="Create Message">
+				</div>
+			</form>
+		</div>
+		<div>
+			{% for message in messages %}
+				<p><span>{{message['message_user']}}</span> - {{message['message']}}</p>
+				{% for comment in message['comments'] %}
+					<p><span>{{comment['comment_user']}}</span> - {{comment['comment']}}</p>
+				{% endfor %}
+				<form action="/comments" method="post">
+					<input type="hidden" name="message_id" value="{{message['message_id']}}">
+					<div>
+						<label>Post a Comment</label>
+					</div>
+					<div>
+						<textarea name="comment"></textarea>
+					</div>
+					<input type="submit" value="Create Comment">
+				</form>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
