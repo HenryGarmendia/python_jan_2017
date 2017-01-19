@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>Flask + MySQL | Email Validation with DB</title>
+
+ 	<!-- FONTAWESOME -->
+ 	<script src="https://use.fontawesome.com/41aef5863b.js"></script>
+
+	<!-- NORMALIZE CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+ 	<!-- MAIN CSS -->
+ 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
+
+ </head>
+ <body>
+	
+	<!-- ::MAIN CONTAINER
+	======================================== -->
+	<div class="main-container">
+		
+		<div class="container">
+
+			<!-- ::EMAIL VALIDATION
+			======================================== -->
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-tittle">Assignment: Email Validation with DB</h1>
+						</div><!-- //panel-heading -->
+						<div class="panel-body">
+							<h3>Add an Email</h3>
+							
+							<form class="form-inline" action='/submit_email' method='POST'>
+								{% with messages = get_flashed_messages(with_categories=true) %}
+									{% if messages %}
+										<ul class=flashes>
+										{% for category, message in messages %}
+											{% if category == 'registration' %}
+												<li>{{ message }}</li>
+											{% endif %}
+										{% endfor %}
+										</ul>
+									{% endif %}
+								{% endwith %}
+								<div class="form-group">
+									<label for="InputEmail1">Email Address:</label>
+								    <input name="email" type="email" class="form-control" id="InputEmail1" placeholder="example@domain.com">
+								</div>
+								<button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+							</form>
+							<h2>DB Email Information</h2>
+							<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th><i class="fa fa-envelope-o" aria-hidden="true"></i> Emails</th>
+									<th><i class="fa fa-calendar" aria-hidden="true"></i> Date Created</th>
+									<th><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Obliterate</th>
+								</tr>
+							</thead>
+							{% for friend in all_emails: %}
+							<tbody>
+								<tr>
+									<th scope="row">{{ friend['id'] }}</th>
+									<td>{{ friend['email'] }}</td>
+									<td>{{ friend['created_at'] }}</td>
+									<td>
+										<form class="delete-form" action="/delete_email/{{ friend['id'] }}" method="POST">
+											<button class="btn btn-danger" value='Delete' type="submit">Delete</button>
+										</form>
+									</td>
+								</tr>
+							</tbody>
+							{% endfor %}
+							</table>
+						  <h4>Author: {{ name }}</h4>
+						</div><!-- //panel-body -->
+					</div><!-- //panel -->
+				</div><!-- //col-md-6 -->
+			</div><!-- //row -->
+		</div><!-- //container -->
+	</div><!-- //main-container -->
+
+	<!-- jQUERY FILE-->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+	<!-- MAIN JAVASCRIPT -->
+ 	<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+ </body>
+ </html>

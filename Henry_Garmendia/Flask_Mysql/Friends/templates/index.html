@@ -4,7 +4,7 @@
  <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>Flask Fundamentals | Assignment: Counter</title>
+ 	<title>Flask + MySQL | MySQL Communication</title>
 
  	<!-- FONTAWESOME -->
  	<script src="https://use.fontawesome.com/41aef5863b.js"></script>
@@ -33,16 +33,48 @@
 				<div class="col-md-12 col-sm-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h1 class="panel-tittle">Assignment: Counter</h1>
+							<h1 class="panel-tittle">MySQL Communication</h1>
 						</div><!-- //panel-heading -->
 						<div class="panel-body">
-							<div class="c-box">
-								<h2 class="c-class">Counter</h2>
-								<p class="counter">Kicking <span>{{ session['counter']}}</span> times.</p>
-							</div><!-- //c-box -->
-							<form action="/kick" method="POST"><button class="btn btn-danger" type="submit">Ninja Kick <i class="fa fa-smile-o" aria-hidden="true"></i></button></form>
-							<form action="/cool" method="POST"><button class="btn btn-primary" type="submit">Reset Kick <i class="fa fa-frown-o" aria-hidden="true"></i></button></form>
-							<h4>Author: {{ name }}</h4>
+							<!-- {{ all_friends }} -->
+							<h3>Add a Family</h3>
+							<form class="form-inline" action='/friends' method='POST'>
+								<div class="form-group">
+									<!-- <label for="first_name">Frist Name:</label> -->
+									<input type="text" name="first_name" class="form-control" id="first_name" placeholder="Frist Name">
+								</div>
+								<div class="form-group">
+									<!-- <label for="last_name">Last Name:</label> -->
+									<input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+								</div>
+								<div class="form-group">
+									<!-- <label for="occupation">Occupation:</label> -->
+									<input type="text" name="occupation" class="form-control" id="occupation" placeholder="Occupation">
+								</div>
+								<button type="submit" value="Add" class="btn btn-primary">Add</button>
+							</form>
+							<h2>Data Base POST Information</h2>
+							<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Occupation</th>
+								</tr>
+							</thead>
+							{% for friend in all_friends: %}
+							<tbody>
+								<tr>
+									<th scope="row">{{ friend['id'] }}</th>
+									<td>{{ friend['first_name'] }}</td>
+									<td>{{ friend['last_name'] }}</td>
+									<td>{{ friend['occupation'] }}</td>
+								</tr>
+							</tbody>
+							{% endfor %}
+							</table>
+						  <h4>Author: {{ name }}</h4>
 						</div><!-- //panel-body -->
 					</div><!-- //panel -->
 				</div><!-- //col-md-6 -->
